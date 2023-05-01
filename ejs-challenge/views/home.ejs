@@ -1,0 +1,21 @@
+
+<%- include('./partials/header.ejs') %>
+
+    <h1>Home</h1>
+
+    <p><%= homeContent %> </p>
+
+    <!-- <% for(var i=0;i<currentPosts.length;i++){ %>
+        <p><%= currentPosts[i].title %></p>
+        <p><%= currentPosts[i].post %></p>
+    <% } %> -->
+    <% currentPosts.forEach(function(post){ %>
+        
+        <h2><%= post.title%></h2>
+        <p><%= post.content.slice(0,100)+"..." %>
+        
+        <a href="/posts/<%= post.title %>">Read More</a>
+    </p>
+    <% }); %>
+
+<%- include('./partials/footer.ejs') %>
